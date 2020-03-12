@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Main</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <h4 for="header"><b>Top 5 Ice Cream shops in Alpharetta!</b></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <ul class="list-group">
+                    {{#each data}}
+                    <li class="list-group-item">
+                        <label for="businessName"><b>{{this.name}}</b></label><br>
+                        <label for="businessAddress">{{this.location.address1}}, {{this.location.city}}</label><br>
+                        <label for="reviewPerson">
+                            <u>Review By: {{this.reviews.[0].user.name}}</u>
+                        </label>
+                        <label for="review"><i>{{this.reviews.[0].text}}</i></label>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
